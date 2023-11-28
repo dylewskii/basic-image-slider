@@ -81,6 +81,7 @@ section {
     font-size: 2rem;
     cursor: pointer;
     padding: 0.5rem;
+    z-index: 1;
 }
 
 .back-btn:hover, .forward-btn:hover {
@@ -96,4 +97,30 @@ section {
 
 .buttons > .forward-btn {
     right: 0%;
+}
+
+.dots {
+    width: 100px;
+    height: 30px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dots .dot {
+    width: 15px;
+    height: 15px;
+    margin: 0 2px;
+    border: 3px solid black;
+    border-radius: 50%;
+    transition: background-color 0.6 ease;
+}
+
+.dots .active {
+    background-color: black;
 }
