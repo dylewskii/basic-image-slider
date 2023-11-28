@@ -1,3 +1,6 @@
+// Slide Container
+const slideContainer = document.querySelector(".slides");
+
 // Images
 let imgs = document.querySelectorAll("img");
 
@@ -57,5 +60,14 @@ const prevSlide = function() {
     }
 }
 
+// Start autoplaying automatically
+const autoplay = setInterval(() => next.click(), 2000); 
+
+// Stop Autoplay
+const stopAutoplay = () => clearInterval(autoplay);
+
 next.addEventListener("click", nextSlide)
 prev.addEventListener("click", prevSlide)
+
+slideContainer.addEventListener("mouseover", stopAutoplay)
+slideContainer.addEventListener("mouseout", autoplay)
