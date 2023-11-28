@@ -3,3 +3,32 @@ body {
     min-height: 100vh;
     background: linear-gradient(to bottom, rgb(245,148,173), rgb(253,213,155), rgb(173,116,216));
 }
+
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: white;
+}
+
+.nav ul {
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+}
+
+.nav ul > li {
+    padding-right: 10px;
+}
