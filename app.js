@@ -14,22 +14,21 @@ const nextSlide = function() {
     const visibleImgIndex = visibleImg.dataset.imgIndex;
 
     const nextDot = activeDot.nextElementSibling;
-    // const activeDotIndex = activeDot.dataset.dotIndex;
 
     // Remove current img's active class
     visibleImg.classList.remove("visible");
     activeDot.classList.remove("active");
 
     // If on the last img, set first img to active
-    if (visibleImgIndex === "2"){
+    if (visibleImgIndex === String(imgs.length - 1)){
         const firstImg = document.querySelector("[data-img-index='0']");
         firstImg.classList.add("visible");
 
-        const firstDot = document.querySelector("[data-dot-index='0']")
+        const firstDot = document.querySelector("[data-dot-index='0']");
         firstDot.classList.add("active");
     } else {
         nextImg.classList.add("visible");
-        nextDot.classList.add("active")
+        nextDot.classList.add("active");
 
     }
 }
@@ -42,13 +41,12 @@ const prevSlide = function() {
     const visibleImgIndex = visibleImg.dataset.imgIndex;
 
     const prevDot = activeDot.previousElementSibling;
-    // const prevDotIndex = activeDot.dataset.dotIndex;
 
     visibleImg.classList.remove("visible");
     activeDot.classList.remove("active");
 
     if (visibleImgIndex === "0"){
-        const lastImg = document.querySelector("[data-img-index='2']");
+        const lastImg = document.querySelector(`[data-img-index='${imgs.length - 1}']`);
         lastImg.classList.add("visible");
 
         const lastDot = document.querySelector("[data-dot-index='2']")
